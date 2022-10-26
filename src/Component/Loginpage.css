@@ -1,0 +1,9 @@
+button {
+    background-color: paleturquoise;
+    font-size: large;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: rgb(46, 158, 158);
+}
