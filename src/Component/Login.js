@@ -54,7 +54,7 @@ const Login = () => {
                 <Form.Control name="password" type="password" placeholder="Password" required />
 
             </Form.Group>
-            {error}
+            <p className='mx-lg-5 text-danger'>{error}</p>
             <p className='mx-lg-5'>Don't have an account? Please <Link to='/signup'>Register.</Link></p>
 
             <Button className="mb-3 mx-lg-5" variant="primary" type="submit">
