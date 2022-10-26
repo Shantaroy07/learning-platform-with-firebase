@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
 
             },
             {
-                path: '/email',
+                path: '/login/email',
                 element: <Login></Login>,
 
             },

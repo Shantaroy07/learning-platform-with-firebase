@@ -29,7 +29,7 @@ const Login = () => {
                     navigate(from, { replace: true });
                 }
                 else {
-                    console.error('Your email is not verified. Please verify your email address.')
+                    console.error('Your email is not valid. Please enter a valid  email address.')
                 }
             })
             .catch(error => {
@@ -52,7 +52,9 @@ const Login = () => {
             <Form.Group className="mb-3 mx-lg-5" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Password" required />
+
             </Form.Group>
+            {error}
             <p className='mx-lg-5'>Don't have an account? Please <Link to='/signup'>Register.</Link></p>
 
             <Button className="mb-3 mx-lg-5" variant="primary" type="submit">

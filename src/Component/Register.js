@@ -8,7 +8,7 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const Register = () => {
 
     const [error, setError] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,12 +23,26 @@ const Register = () => {
                 console.log(user);
                 setError('');
                 form.reset();
+                handleUpdateUserProfile(name, photoURL);
+
             })
             .catch(e => {
                 console.error(e);
                 setError(e.message);
             });
     }
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
+
+
 
     return (
         <Form onSubmit={handleSubmit} className='container mx-lg-5'>
@@ -50,7 +64,7 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
-            <p>Already Have an Account? Please <Link to='/login'>Login.</Link></p>
+            <p>Already Have an Account? Please <Link to='/login/email'>Login.</Link></p>
 
             <Button variant="primary" type="submit" disabled=''>
                 Register
