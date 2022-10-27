@@ -14,20 +14,20 @@ const Courses = () => {
     }, [])
 
     return (
-        <div className='container '>
+        <div className='container mt-4  '>
             <div className='row'>
                 <div className='col-4'>
                     {
                         categories.map(category => <p
-                            className='text-decoration-none'
+                            className='mb-4'
                             key={category.id}>
-                            <Link to={`/courses/${category.id}`}>{category.name}</Link>
+                            <Link className='text-decoration-none bg-secondary p-2 rounded-2 text-light' to={`/courses/${category.id}`}>{category.name}</Link>
                         </p>)
                     }
 
                 </div>
                 <div className='col-8 '>
-                    <div className='grid' >
+                    <div className='grid gap-2 ' >
                         {
                             categories.map(category => <Course
                                 key={category.id}
