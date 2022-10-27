@@ -34,6 +34,7 @@ function NavBar() {
                         <Link className='m-1 text-decoration-none text-dark' to='/'>Home</Link>
                         <Link className='m-1 text-decoration-none text-dark' to='/courses'>Courses</Link>
                         <Link className='m-1 text-decoration-none text-dark' to="/blog">Blog</Link>
+                        <Link className='m-1 text-decoration-none text-dark' to="/faq">FAQ</Link>
                         <>
                             {
                                 user?.displayName ?

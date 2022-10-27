@@ -5,6 +5,8 @@ import Courses from '../Component/courses';
 import Login from '../Component/Login';
 import Register from '../Component/Register';
 import LogInPage from '../Component/LoginPage';
+import Blog from '../Component/Blog';
+import CourseDetails from '../Component/CourseDetails';
 
 
 export const router = createBrowserRouter([
@@ -36,6 +38,15 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Register></Register>,
+
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>,
+            },
+            {
+                path: '/courses/:id',
+                element: <CourseDetails></CourseDetails>
 
             },
             {
