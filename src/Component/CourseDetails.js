@@ -2,7 +2,7 @@
 
 import Button from 'react-bootstrap/Button';
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
   const course = useLoaderData();
@@ -15,7 +15,7 @@ const CourseDetails = () => {
       <h6>Details: {course.details}</h6>
       <p>Course Duration: {course.duration}</p>
 
-      <Button>Get premium access</Button>
+      <Button  ><Link className='text-decoration-none text-light' to={`/checkout/${course.id}`}>Get premium access</Link> </Button>
     </div>
   );
 };

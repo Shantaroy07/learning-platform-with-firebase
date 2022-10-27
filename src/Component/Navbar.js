@@ -37,7 +37,7 @@ function NavBar() {
                         <Link className='m-1 text-decoration-none text-dark' to="/faq">FAQ</Link>
                         <>
                             {
-                                user?.displayName ?
+                                user?.email ?
                                     <>
                                         <Link onClick={handleLogOut} className='m-1 text-decoration-none text-dark' to="/login">SignOut   </Link>
 

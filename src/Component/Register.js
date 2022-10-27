@@ -64,6 +64,7 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
+            <p className='text-danger'>{error}</p>
             <p>Already Have an Account? Please <Link to='/login/email'>Login.</Link></p>
 
             <Button variant="primary" type="submit" disabled=''>

@@ -1,5 +1,5 @@
 import './Loginpage.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
@@ -14,13 +14,23 @@ function LogInPage() {
     const { providerLogIn } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider()
+    const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         providerLogIn(googleProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                if (user.email) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    console.error('Your email is not valid. Please enter a valid  email address.')
+                }
             })
             .catch(error => console.error(error))
     }
@@ -30,6 +40,13 @@ function LogInPage() {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                if (user.email) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    console.error('Your email is not valid. Please enter a valid  email address.')
+                }
+
             })
             .catch(error => console.error(error))
     }

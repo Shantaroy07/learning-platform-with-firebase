@@ -7,6 +7,8 @@ import Register from '../Component/Register';
 import LogInPage from '../Component/LoginPage';
 import Blog from '../Component/Blog';
 import CourseDetails from '../Component/CourseDetails';
+import CheckOut from '../Component/CheckOut';
+import PrivateRoute from './Privateroute';
 
 
 export const router = createBrowserRouter([
@@ -47,6 +49,12 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+
+            },
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
 
             },
