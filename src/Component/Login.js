@@ -25,7 +25,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                if (user.email) {
+                if (user.uid) {
                     navigate(from, { replace: true });
                 }
                 else {

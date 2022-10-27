@@ -25,7 +25,7 @@ function LogInPage() {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                if (user.email) {
+                if (user.uid) {
                     navigate(from, { replace: true });
                 }
                 else {
@@ -40,7 +40,7 @@ function LogInPage() {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                if (user.email) {
+                if (user.uid) {
                     navigate(from, { replace: true });
                 }
                 else {

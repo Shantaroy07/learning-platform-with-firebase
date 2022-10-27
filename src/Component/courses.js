@@ -8,7 +8,7 @@ import './Course.css'
 const Courses = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://learning-platform-server-ashen.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])

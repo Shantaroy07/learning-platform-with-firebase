@@ -8,9 +8,6 @@ import { FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 
 
-
-
-
 function NavBar() {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
@@ -27,7 +24,7 @@ function NavBar() {
                     width="30"
                     height="30"
                     className="d-inline-block align-top"
-                />  Learning Programing Languages Platform</Navbar.Brand>
+                />  Learning Programing Languages </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto ">
@@ -37,9 +34,9 @@ function NavBar() {
                         <Link className='m-1 text-decoration-none text-dark' to="/faq">FAQ</Link>
                         <>
                             {
-                                user?.email ?
+                                user?.uid ?
                                     <>
-                                        <Link onClick={handleLogOut} className='m-1 text-decoration-none text-dark' to="/login">SignOut   </Link>
+                                        <Link onClick={handleLogOut} className='m-1 text-decoration-none text-dark' to="/login">SignOut</Link>
 
                                     </>
                                     :
@@ -62,10 +59,6 @@ function NavBar() {
                                 : <FaUser></FaUser>
                             }
                         </>
-
-
-
-
                     </Nav>
                 </Navbar.Collapse>
             </Container>
